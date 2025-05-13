@@ -37,7 +37,7 @@ function cmp_register_custom_post_type() {
 add_action('init', 'cmp_register_custom_post_type');
 
 
-require plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
+require plugin_dir_path(__FILE__) . 'plugin-update-checker-master/plugin-update-checker.php';
 
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
