@@ -2,13 +2,13 @@
 /**
  * Plugin Name: Custom Message Plugin
  * Description: Enregistre un Custom Post Type "Message personnalisé".
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Ton Nom
  */
 
 defined('ABSPATH') || exit;
 
-function cmp_register_custom_post_type() {
+function cmp_register_cpt_message() {
     $labels = [
         'name'               => 'Messages personnalisés',
         'singular_name'      => 'Message personnalisé',
@@ -34,7 +34,35 @@ function cmp_register_custom_post_type() {
 
     register_post_type('message_personnalise', $args);
 }
-add_action('init', 'cmp_register_custom_post_type');
+add_action('init', 'cmp_register_cpt_message');
+
+function cmp_register_cpt_annonce() {
+    $labels = [
+        'name'               => 'Annonces',
+        'singular_name'      => 'Annonce',
+        'add_new'            => 'Ajouter',
+        'add_new_item'       => 'Ajouter une annonce',
+        'edit_item'          => 'Modifier',
+        'new_item'           => 'Nouvelle annonce',
+        'view_item'          => 'Voir l\'annonce',
+        'search_items'       => 'Rechercher des annonces',
+        'not_found'          => 'Aucune annonce trouvée',
+        'menu_name'          => 'Annonces',
+    ];
+
+    $args = [
+        'labels'             => $labels,
+        'public'             => true,
+        'menu_position'      => 26,
+        'menu_icon'          => 'dashicons-megaphone',
+        'supports'           => ['title', 'editor'],
+        'has_archive'        => true,
+        'show_in_rest'       => true,
+    ];
+
+    register_post_type('annonce', $args);
+}
+add_action('init', 'cmp_register_cpt_annonce');
 
 
 require plugin_dir_path(__FILE__) . 'plugin-update-checker-master/plugin-update-checker.php';
