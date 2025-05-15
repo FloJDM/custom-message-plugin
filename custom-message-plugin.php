@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom Message Plugin
  * Description: Enregistre un Custom Post Type "Message personnalisé".
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Ton Nom
  */
 
@@ -38,8 +38,8 @@ add_action('init', 'cmp_register_cpt_message');
 
 function cmp_register_cpt_annonce() {
     $labels = [
-        'name'               => 'Annonces',
-        'singular_name'      => 'Annonce',
+        'name'               => 'Evenements',
+        'singular_name'      => 'Evenement',
         'add_new'            => 'Ajouter',
         'add_new_item'       => 'Ajouter une annonce',
         'edit_item'          => 'Modifier',
